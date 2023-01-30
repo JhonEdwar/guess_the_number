@@ -6,14 +6,12 @@ export const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
   },
-  containterScroll: {
-    flex: 1,
-  },
   title: {
     fontSize: 18,
     textAlign: "center",
     paddingVertical: 20,
     color:colors.text,
+    fontFamily:"IBMPlexSans-Regular",
   },
   inputContainer: {
     width: "75%",
@@ -25,6 +23,7 @@ export const styles = StyleSheet.create({
     fontSize: 15,
     paddingVertical: 5,
     textAlign: "center",
+    fontFamily:"IBMPlexSans-BoldItalic",
   },
   input: {
     width: "100%",
@@ -50,4 +49,8 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     marginVertical: 30,
   },
+  confirmedTitle:{
+    fontSize:16,
+    fontFamily:"IBMPlexSans-BoldItalic",
+    }
 });

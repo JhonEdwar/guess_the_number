@@ -20,6 +20,7 @@ export const styles = StyleSheet.create({
     color: colors.text,
     textAlign: "center",
     paddingVertical: 20,
+    fontFamily:"IBMPlexSans-Regular",
   },
   buttonContainer: {
     flexDirection: "row",

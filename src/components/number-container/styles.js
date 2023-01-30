@@ -15,6 +15,6 @@ export const styles = StyleSheet.create({
   },
   number: {
     fontSize: 22,
-    // fontFamily: "Karma-Bold",
+    fontFamily:"IBMPlexSans-BoldItalic",
   },
 });
