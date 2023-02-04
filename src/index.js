@@ -16,11 +16,18 @@ const App = () => {
 
   })
   const[userNumber,setUserNumber]=useState(null)
+  const[gessRounds,setGessRounds]=useState(0)
 
   const onHandleStartGame=(selectedNumber)=>{
     setUserNumber(selectedNumber)
   }
-  const Content=()=>userNumber? (<Game selectedNumber={userNumber} />) : (<StartGame onHandleStartGame={onHandleStartGame} /> )
+
+  const onHandleGameOver=(rounds)=>{
+    setGessRounds(rounds)
+  }
+
+
+  const Content=()=>userNumber? (<Game selectedNumber={userNumber} onHandleGameOver={onHandleGameOver} />) : (<StartGame onHandleStartGame={onHandleStartGame} /> )
 
 if(!loaded){
   return(

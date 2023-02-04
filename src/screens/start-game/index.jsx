@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+/* eslint-disable import/namespace */
 import React, { useState } from "react";
 import {
   View,
@@ -13,7 +15,7 @@ import { styles } from "./styles";
 import { Card, NumberContainer } from "../../components/index";
 import { colors } from "../../constants/index";
 
-const startGame = ({onHandleStartGame}) => {
+const startGame = ({ onHandleStartGame }) => {
   const [enterValue, setEnteredValue] = useState("");
   const [confirmed, setConfirmed] = useState(false);
   const [selectedNumber, setSelectedNumber] = useState(null);
@@ -31,24 +33,27 @@ const startGame = ({onHandleStartGame}) => {
       Alert.alert("Numbero invalido", "El numero tiene que estar entre 1 y 99", [
         { text: "Entendido", style: "destructive", onPress: onHandleReset },
       ]);
-    }else{
+    } else {
       setConfirmed(true);
       setSelectedNumber(chosenNumber);
-      setEnteredValue('')
+      setEnteredValue("");
     }
   };
 
-  const onHandleStart=()=>{
-    onHandleStartGame(selectedNumber)
-  }
-
-  const Confirmed=()=>confirmed?(
+  const Confirmed = () =>
+  confirmed ? (
     <Card style={styles.confirmedContainer}>
       <Text style={styles.confirmedTitle}>Número Seleccionado</Text>
-      <NumberContainer number={selectedNumber}/>
-      <Button title="Iniciar juego" onPress={onHandleStart} color={colors.primary}/>
+      <NumberContainer number={selectedNumber} />
+      <Button title="Iniciar juego" onPress={onHandleStart} color={colors.primary} />
     </Card>
-    ):null
+  ) : null;
+
+  const onHandleStart = () => {
+    onHandleStartGame(selectedNumber);
+  };
+
+
 
   return (
     <TouchableWithoutFeedback
